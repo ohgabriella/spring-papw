@@ -1,4 +1,4 @@
-package br.unipe.pos.mobile.api.model;
+package br.unipe.papw.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;

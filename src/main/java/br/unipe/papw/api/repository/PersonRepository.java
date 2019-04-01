@@ -1,9 +1,9 @@
-package br.unipe.pos.mobile.api.repository;
+package br.unipe.papw.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.unipe.pos.mobile.api.model.Person;
+import br.unipe.papw.api.model.Person;
 
 /**
  * This use JpaRepository that extends the PagingAndSortingRepository that extends CRUDRepository.

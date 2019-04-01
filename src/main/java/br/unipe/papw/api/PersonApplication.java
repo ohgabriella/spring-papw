@@ -1,4 +1,4 @@
-package br.unipe.pos.mobile.api;
+package br.unipe.papw.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

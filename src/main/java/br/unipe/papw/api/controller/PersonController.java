@@ -1,12 +1,12 @@
-package br.unipe.pos.mobile.api.controller;
+package br.unipe.papw.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import br.unipe.pos.mobile.api.exception.PersonNotFoundException;
-import br.unipe.pos.mobile.api.model.Person;
-import br.unipe.pos.mobile.api.repository.PersonRepository;
+import br.unipe.papw.api.exception.PersonNotFoundException;
+import br.unipe.papw.api.model.Person;
+import br.unipe.papw.api.repository.PersonRepository;
 
 import javax.validation.Valid;
 import java.util.List;

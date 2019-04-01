@@ -1,4 +1,4 @@
-package br.unipe.pos.mobile.api.exception;
+package br.unipe.papw.api.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
