@@ -14,15 +14,20 @@
  */
 package br.unipe.papw.api.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.unipe.papw.api.model.Person;
+import br.unipe.papw.api.model.Group;
+import br.unipe.papw.api.model.Role;
 
 /**
  * This use JpaRepository that extends the PagingAndSortingRepository that extends CRUDRepository.
  */
 @Repository
-public interface PersonRepository extends JpaRepository<Person, Long> {
+public interface RolesRepository extends JpaRepository<Group, Long> {
+	
 
+	List<Role> findByGroupsIn(Group grupo);
 }
