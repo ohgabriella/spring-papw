@@ -1,6 +1,7 @@
 package br.unipe.papw.config.security;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,11 +22,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
-			//http.authorizeRequests()
-					// Para qualquer requisição (anyRequest) é preciso estar
-					// autenticado (authenticated).
-					//.anyRequest().authenticated()
-					//.and().httpBasic();
+			
 			http.csrf().disable().authorizeRequests()
 			.antMatchers("/css/**", "/index").permitAll()
 			.antMatchers("/user/**").hasRole("USER")
@@ -34,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.anyRequest().authenticated()
 			.and().formLogin().permitAll()
 			.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
-
+			
 		}
 		
 		

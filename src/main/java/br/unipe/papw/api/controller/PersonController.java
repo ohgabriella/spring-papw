@@ -2,6 +2,7 @@ package br.unipe.papw.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import br.unipe.papw.api.exception.PersonNotFoundException;
@@ -20,6 +21,11 @@ public class PersonController {
 	@Autowired
 	PersonRepository personRepository;
 
+	@RequestMapping("/hello")
+    public String hello() {
+        return "/hello";
+    }
+
 	@GetMapping("/persons")
 	public List<Person> getAllPersons() {
 		return personRepository.findAll();
@@ -27,8 +33,7 @@ public class PersonController {
 
 	@GetMapping("/persons/{id}")
 	public Person getPersonById(@PathVariable(value = "id") Long id) {
-		return personRepository.findById(id)
-				.orElseThrow(() -> new PersonNotFoundException("Person", "id", id));
+		return personRepository.findById(id).orElseThrow(() -> new PersonNotFoundException("Person", "id", id));
 	}
 
 	@PostMapping("/persons")
@@ -58,4 +63,7 @@ public class PersonController {
 		personRepository.delete(person);
 		return ResponseEntity.ok().build();
 	}
+
+
+	
 }
